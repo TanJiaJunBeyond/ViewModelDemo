@@ -9,13 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateUnspecified|adjustPan">
+
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
+
         </activity>
+
+        <activity
+            android:name=".activity.NameActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateUnchanged|adjustPan" />
+
     </application>
 
 </manifest>
