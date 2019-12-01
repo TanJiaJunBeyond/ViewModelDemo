@@ -20,7 +20,7 @@ open class ObservableViewModel : ViewModel(), Observable {
     fun notifyChange() =
         callbacks.notifyCallbacks(this, 0, null)
 
-    fun notifyPropertyChange(fieldId: Int) =
+    fun notifyPropertyChanged(fieldId: Int) =
         callbacks.notifyCallbacks(this, fieldId, null)
 
 }

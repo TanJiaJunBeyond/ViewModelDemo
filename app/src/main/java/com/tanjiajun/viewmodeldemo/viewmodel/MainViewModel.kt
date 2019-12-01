@@ -13,21 +13,21 @@ class MainViewModel : ObservableViewModel() {
     var name = ""
         set(value) {
             field = value
-            notifyPropertyChange(BR.name)
+            notifyPropertyChanged(BR.name)
         }
 
     @get:Bindable
     var age = 0
         set(value) {
             field = value
-            notifyPropertyChange(BR.age)
+            notifyPropertyChanged(BR.age)
         }
 
     @get:Bindable
     var gender = ""
         set(value) {
             field = value
-            notifyPropertyChange(BR.gender)
+            notifyPropertyChanged(BR.gender)
         }
 
     interface Handlers {

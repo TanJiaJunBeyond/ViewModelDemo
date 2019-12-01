@@ -12,7 +12,7 @@ class NameViewModel : ObservableViewModel() {
     var name = ""
         set(value) {
             field = value
-            notifyPropertyChange(BR.name)
+            notifyPropertyChanged(BR.name)
         }
 
 }
