@@ -30,7 +30,7 @@
         <activity
             android:name=".activity.NameActivity"
             android:launchMode="standard"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:windowSoftInputMode="stateUnchanged|adjustPan" />
 
     </application>

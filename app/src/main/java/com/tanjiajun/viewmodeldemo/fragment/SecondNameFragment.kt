@@ -16,6 +16,11 @@ import com.tanjiajun.viewmodeldemo.viewmodel.NameViewModel
  */
 class SecondNameFragment : Fragment(), SecondNameHandlers {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,7 +32,9 @@ class SecondNameFragment : Fragment(), SecondNameHandlers {
             container,
             false
         )
-            .also { it.handlers = this }
+            .also {
+                it.handlers = this
+            }
             .root
 
     override fun onChangeNameToAppleClick(view: View) {

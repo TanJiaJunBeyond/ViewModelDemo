@@ -19,13 +19,16 @@ class NameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_name)
         manager = supportFragmentManager
-        addFragment(FirstNameFragment(), FRAGMENT_TAG_FIRST_NAME)
+
+        if (savedInstanceState == null) {
+            addFragment(FirstNameFragment(), FRAGMENT_TAG_FIRST_NAME)
+        }
     }
 
-    fun addFragment(fragment: Fragment, transactionTag: String) =
+    fun addFragment(fragment: Fragment, tag: String) =
         with(manager.beginTransaction()) {
-            add(R.id.fl_content, fragment)
-            addToBackStack(transactionTag)
+            add(R.id.fl_content, fragment, tag)
+            addToBackStack(tag)
             commitAllowingStateLoss()
         }
 

@@ -18,6 +18,18 @@ import com.tanjiajun.viewmodeldemo.viewmodel.NameViewModel
  */
 class FirstNameFragment : Fragment(), FirstNameHandlers {
 
+    private var viewModel: NameViewModel? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+        viewModel = activity?.let {
+            ViewModelProviders.of(it)[NameViewModel::class.java].apply {
+                name = "谭嘉俊"
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,13 +41,9 @@ class FirstNameFragment : Fragment(), FirstNameHandlers {
             container,
             false
         )
-            .also { binding ->
-                binding.viewModel = activity?.let {
-                    ViewModelProviders.of(it)[NameViewModel::class.java].apply {
-                        name = "谭嘉俊"
-                    }
-                }
-                binding.handlers = this
+            .also {
+                it.viewModel = viewModel
+                it.handlers = this
             }
             .root
 
