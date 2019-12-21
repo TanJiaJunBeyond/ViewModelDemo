@@ -3,7 +3,7 @@
     <string name="app_name">ViewModelDemo</string>
 
     <string name="navigate_to_name_activity">导航到NameActivity</string>
-    <string name="navigate_to_second_fragment">导航到SecondFragment</string>
+    <string name="navigate_to_second_name_fragment">导航到SecondNameFragment</string>
     <string name="change_name_to_apple">名字改成苹果</string>
 
 </resources>
